@@ -43,6 +43,12 @@ jobs:
       shell: bash
       run: |
         cd build && ninja
+    - name: Archive production artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: dist
+        path: |
+          build/bin
     - name: Running C++ Tests
       shell: bash
       run: |
